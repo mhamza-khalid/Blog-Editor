@@ -21,7 +21,7 @@ export default function App() {
 
       async function checkSignedIn(token) {
         try {
-          const response = await fetch("http://localhost:3000/login/check", {
+          const response = await fetch("https://blog-backend-production-6422.up.railway.app/login/check", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function App() {
 
           try {
             if (update != true) {
-              const formResponse = await fetch("http://localhost:3000/posts", {
+              const formResponse = await fetch("https://blog-backend-production-6422.up.railway.app/posts", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export default function App() {
             }
 
             if (update == true) {
-              const formResponse = await fetch(`http://localhost:3000/posts/${postId}`, {
+              const formResponse = await fetch(`https://blog-backend-production-6422.up.railway.app/posts/${postId}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export default function App() {
       //now get post of that post id
       async function getPost() {
 
-        const response = await fetch("http://localhost:3000/login/check", {
+        const response = await fetch("https://blog-backend-production-6422.up.railway.app/login/check", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -122,7 +122,7 @@ export default function App() {
           return;
         }
         try {
-          let response = await fetch(`http://localhost:3000/posts/${postId}`)
+          let response = await fetch(`https://blog-backend-production-6422.up.railway.app/posts/${postId}`)
           if (response.status == 200) {
             let data = await response.json()
             console.log(data)
